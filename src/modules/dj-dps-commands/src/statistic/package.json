@@ -1,0 +1,17 @@
+{
+  "name": "dps-command-pack-statistic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "compute-cosine-similarity": "^1.0.0",
+    "lodash-node": "^3.10.2",
+    "regression": "^2.0.1"
+  }
+}

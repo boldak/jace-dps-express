@@ -1,0 +1,18 @@
+{
+  "name": "dps-command-pack-export",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "iconv-lite": "^0.6.2",
+    "json2csv": "^5.0.6",
+    "lodash-node": "^3.10.2",
+    "mime": "^2.5.0",
+    "node-xlsx": "^0.16.1"
+  }
+}

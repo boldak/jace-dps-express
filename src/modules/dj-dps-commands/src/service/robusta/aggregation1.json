@@ -1,0 +1,53 @@
+{
+	"request":{
+		"url":"https://jdhd...",
+		"method":"post",
+		"params": {
+			"queries":[
+				{
+					"name":"USA - Voice of America",
+					"query":"Trump @source \\\"USA - Voice of America\\\""
+				},
+				{
+					"name":"US News Headlines, Latest USA News, US Election 2020 news on Times of India",
+					"query":"Trump @source \\\"US News Headlines, Latest USA News, US Election 2020 news on Times of India\\\""
+				}	
+			],
+			"points": 48,
+			"startAt": "2021.01.25 00:00",
+			"stopAt": "2021.01.26 00:00"
+		}
+	},
+	"response":{
+		"status":"ok",
+		"data":[
+			{
+				"name":"USA - Voice of America",
+				"values":[
+					{
+						"date":"First Date in ISO format",
+						"value":10
+					},
+					{
+						"date":"Last Date in ISO format",
+						"value":15
+					}
+				]
+			},
+			{
+				"name":"US News Headlines, Latest USA News, US Election 2020 news on Times of India",
+				"values":[
+					{
+						"date":"First Date in ISO format",
+						"value":10
+					},
+					{
+						"date":"Last Date in ISO format",
+						"value":15
+					}
+				]
+			}		
+		]
+	}
+	
+}	

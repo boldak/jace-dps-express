@@ -1,0 +1,44 @@
+{
+	"request":{
+		"url":"https://jdhd...",
+		"method":"post",
+		"params": {
+			"queries":[
+				{
+					"name":"yesterday",
+					"query":"@datatime 20210125"
+				},
+				{
+					"name":"today",
+					"query":"@datatime 20210126"
+				},
+
+			],
+			"return":["person"]
+	},
+	"response":{
+		"status":"ok",
+		"data":[
+			{
+				"name":"yesterday",
+				"length":450
+				"values":[
+					{
+						"person":["Зеленский", "Путин"],
+					},...
+					
+				]
+			},
+			{
+				"name":"today",
+				"length":450
+				"values":[
+					{
+						"person":["Юля-красотуля"]
+					},...
+					
+				]
+			}		
+		]
+	}
+}	

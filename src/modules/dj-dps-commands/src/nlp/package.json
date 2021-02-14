@@ -1,0 +1,19 @@
+{
+  "name": "dps-command-pack-nlp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "langdetect": "^0.2.1",
+    "lodash-node": "^3.10.2",
+    "natural": "^3.0.1"
+  }
+}

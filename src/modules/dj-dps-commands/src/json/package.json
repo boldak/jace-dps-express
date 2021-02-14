@@ -1,0 +1,19 @@
+{
+  "name": "dps-command-pack-json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  	"bluebird": "^3.7.2",
+    "iconv-lite": "^0.6.2",
+    "csvjson": "^5.1.0",
+    "xml2js": "^0.4.23",
+    "html2json": "^1.0.2"
+    
+  },	
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "dj-dps-parser",
+  "version": "1.0.0",
+  "description": "Data Processing Script parser converts dps to json structure",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

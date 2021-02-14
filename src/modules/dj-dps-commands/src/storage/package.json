@@ -1,0 +1,20 @@
+{
+  "name": "dps-command-pack-storage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "del": "^6.0.0",
+    "iconv-lite": "^0.6.2",
+    "jsonpath": "^1.1.0",
+    "lodash-node": "^3.10.2",
+    "object-hash": "^2.1.1"
+  }
+}

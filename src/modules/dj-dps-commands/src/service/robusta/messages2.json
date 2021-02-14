@@ -1,0 +1,39 @@
+{
+	"request":{
+		"url":"https://jdhd...",
+		"method":"post",
+		"params": {
+			"queries":[
+				{
+					"name":"Messages",
+					"query":"зеленск"
+				}
+			],
+			"return":["title", "link"],
+			"startAt": "2021.01.25 00:00",
+			"stopAt": "2021.01.26 00:00",
+			"startIndex":21,
+			"limit":10
+		}
+	},
+	"response":{
+		"status":"ok",
+		"data":[
+			{
+				"name":"Messages",
+				"length":450,
+				"partition":[21, 30],
+				"values":[
+					{
+						"title":"Title of message",
+						"link":"ref to message source"
+					},
+					{
+						"title":"Title of message",
+						"link":"ref to message source"
+					}
+				]
+			}		
+		]
+	}
+}	

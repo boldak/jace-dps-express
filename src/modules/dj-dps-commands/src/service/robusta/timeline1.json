@@ -1,0 +1,68 @@
+{
+	"request":{
+		"url":"https://jdhd...",
+		"method":"post",
+		"params": {
+			"queries":[
+				{
+					"name":"all",
+					"query":"Trump"
+				},
+				{
+					"name":"negative",
+					"query":"Trump @em bad"
+				},
+				{
+					"name":"positive",
+					"query":"Trump @em good"
+				}	
+			],
+			"points": 100
+		}
+	},
+	"response":{
+		"status":"ok",
+		"data":[
+			{
+				"name":"all",
+				"values":[
+					{
+						"date":"First Date in ISO format",
+						"value":10
+					},
+					{
+						"date":"Last Date in ISO format",
+						"value":15
+					}
+				]
+			},
+			{
+				"name":"negative",
+				"values":[
+					{
+						"date":"First Date in ISO format",
+						"value":10
+					},
+					{
+						"date":"Last Date in ISO format",
+						"value":15
+					}
+				]
+			},
+			{
+				"name":"positive",
+				"values":[
+					{
+						"date":"First Date in ISO format",
+						"value":10
+					},
+					{
+						"date":"Last Date in ISO format",
+						"value":15
+					}
+				]
+			}
+		]
+	}
+	
+}	

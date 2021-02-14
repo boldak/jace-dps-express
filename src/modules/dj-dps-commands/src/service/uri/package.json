@@ -1,0 +1,17 @@
+{
+  "name": "dps-command-pack-service-uri",
+  "version": "1.0.0",
+  "description": "",
+  "main": "info.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "dns": "^0.2.2",
+    "url": "^0.11.0"
+  }
+}

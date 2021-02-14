@@ -1,0 +1,36 @@
+{
+	"request":{
+		"url":"https://jdhd...",
+		"method":"post",
+		"params": {
+			"queries":[
+				{
+					"name":"Locations",
+					"query":"зеленск"
+				}
+			],
+			"aggregateBy":"location",
+			"order":"desc",
+			"limit":10
+		}
+	},
+	"response":{
+		"status":"ok",
+		"data":[
+			{
+				"name":"Locations",
+				"values":[
+					{
+						"name":"Украина",
+						"value":220
+					},
+					{
+						"name":"Минск",
+						"value":43
+					}
+				]
+			}		
+		]
+	}
+	
+}	

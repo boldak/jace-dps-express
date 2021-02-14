@@ -1,0 +1,38 @@
+{
+	"request":{
+		"url":"https://jdhd...",
+		"method":"post",
+		"params": {
+			"queries":[
+				{
+					"name":"SourcesTop20",
+					"query":"Trump"
+				}
+			],
+			"startAt": "2021.01.25 00:00",
+			"stopAt": "2021.01.26 00:00",
+			"aggregateBy":"person",
+			"order":"desc",
+			"limit":20
+		}
+	},
+	"response":{
+		"status":"ok",
+		"data":[
+			{
+				"name":"SourceActivityTop20",
+				"values":[
+					{
+						"name":"US News Headlines, Latest USA News, US Election 2020 news on Times of India",
+						"value":220
+					},
+					{
+						"name":"USA - Voice of America",
+						"value":43
+					}
+				]
+			}		
+		]
+	}
+	
+}	

@@ -1,0 +1,1 @@
+var conf = require("../src/modules/dj-dps-commands");
