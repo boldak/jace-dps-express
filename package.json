@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server"
-	
   },
   "author": "",
   "license": "ISC",
@@ -34,6 +33,7 @@
     "dps-command-pack-profile": "file:src/modules/dj-dps-commands/src/profile",
     "dps-command-pack-sendmail": "file:src/modules/dj-dps-commands/src/sendmail",
     "dps-command-pack-service-cypher": "file:src/modules/dj-dps-commands/src/service/cypher",
+    "dps-command-pack-service-dataverse": "file:src/modules/dj-dps-commands/src/service/dataverse",
     "dps-command-pack-service-dict": "file:src/modules/dj-dps-commands/src/service/dict",
     "dps-command-pack-service-elasticsearch": "file:src/modules/dj-dps-commands/src/service/elasticsearch",
     "dps-command-pack-service-github": "file:src/modules/dj-dps-commands/src/service/github",
