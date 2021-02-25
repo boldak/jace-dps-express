@@ -1,7 +1,6 @@
 let marky = require( "./render")
 let _ = require("lodash")
 
-
 class MdImplError extends Error {
     constructor(message) {
         super(message);
@@ -56,7 +55,7 @@ module.exports = {
                 }
                 resolve(state)
               } catch (e) {
-                console.log(e.stack)
+                // console.log(e.stack)
                 reject( new MdImplError(e.toString()))
               }
         })

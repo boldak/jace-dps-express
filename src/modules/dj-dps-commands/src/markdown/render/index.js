@@ -2,7 +2,7 @@ var defaults = require('lodash.defaults')
 var isPlainObj = require('is-plain-obj')
 var render = require('./lib/render')
 var sanitize = require('./lib/sanitize')
-// var markyInfo = require('./marky.json')
+var markyInfo = require('./marky.json')
 
 var defaultOptions = {
   sanitize: true,
@@ -47,17 +47,17 @@ var marky = module.exports = function (markdown, options) {
     html = sanitize(html, options)
   }
 
-  // if (options.debug) {
-  //   var debugHeader =
-  //     '<!--' +
-  //     ' this HTML was generated using marky-markdown version ' + markyInfo.version + '.' +
-  //     ' see an issue? file at ' + markyInfo.issuesUrl + '.' +
-  //     ' please include the version in your issue. thanks for using marky!' +
-  //     ' to learn more, visit ' + markyInfo.repositoryUrl + '.' +
-  //     '  -->'
+  if (options.debug) {
+    var debugHeader =
+      '<!--' +
+      ' this HTML was generated using marky-markdown version ' + markyInfo.version + '.' +
+      ' see an issue? file at ' + markyInfo.issuesUrl + '.' +
+      ' please include the version in your issue. thanks for using marky!' +
+      ' to learn more, visit ' + markyInfo.repositoryUrl + '.' +
+      '  -->'
 
-  //   html = debugHeader + '\n' + html
-  // }
+    html = debugHeader + '\n' + html
+  }
 
   return html
 }
@@ -77,6 +77,5 @@ marky.getParser = function (options) {
       return sanitize(originalRender.call(parser, markdown), options)
     }
   }
-  console.log("Return parser")
   return parser
 }

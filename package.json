@@ -55,6 +55,7 @@
     "lodash": "^4.17.20",
     "lodash-node": "^3.10.2",
     "lodash.defaults": "^4.2.0",
+    "oniguruma": "^7.2.1",
     "queue-promise": "^2.1.0",
     "swagger-ui-express": "^4.1.6",
     "yamljs": "^0.3.0"
