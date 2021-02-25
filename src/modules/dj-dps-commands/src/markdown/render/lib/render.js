@@ -31,7 +31,7 @@ var markdownItAsciiMath =  require('./plugin/markdown-it-asciimath-1')
 
  
 
-if (typeof process.browser === 'undefined') {
+// if (typeof process.browser === 'undefined') {
 
   // var langCypher = require('highlightjs-cypher');
 
@@ -59,7 +59,10 @@ if (typeof process.browser === 'undefined') {
     'language-yaml'
   ]
 
+console.log("LANGS",languages)
+
   languages.forEach(function (language) {
+    console.log(language + '/package.json'+' => ',require.resolve(language + '/package.json'))
     highlighter.requireGrammarsSync({
       modulePath: require.resolve(language + '/package.json')
     })
@@ -68,7 +71,7 @@ if (typeof process.browser === 'undefined') {
   // cleanup generated rules in the highlighter registry if they are idle for 2000ms
   // they take a tremendous amount of memory if you process many languages in a server type environment.
   cleanup(highlighter.registry.grammars)
-}
+// }
 
 var render = module.exports = function (markdown, options) {
   return render.getParser(options).render(markdown)
@@ -85,6 +88,7 @@ render.getParser = function (options) {
     mdOptions.highlight = function (code, lang) {
       // console.log(code, lang)
       if (!lang) { return '' }
+      console.log("H", lang, code, scopeNameFromLang(highlighter, lang))  
       return highlighter.highlightSync({
         fileContents: code,
         scopeName: scopeNameFromLang(highlighter, lang)
@@ -99,7 +103,7 @@ render.getParser = function (options) {
 
 
     .use(emoji, {shortcuts: {}})
-    .use(expandTabs, {tabWidth: 4})
+    // .use(expandTabs, {tabWidth: 4})
     .use(githubTaskList)
     .use(headingLinks, options)
     .use(githubHeadings)

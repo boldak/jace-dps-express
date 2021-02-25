@@ -77,5 +77,6 @@ marky.getParser = function (options) {
       return sanitize(originalRender.call(parser, markdown), options)
     }
   }
+  console.log("Return parser")
   return parser
 }
