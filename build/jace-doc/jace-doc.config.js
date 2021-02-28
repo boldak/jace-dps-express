@@ -1,6 +1,6 @@
 module.exports = {
 	  protocol: process.env.PROTOCOL || "http",	
-      url: `${process.env.APP_HOST || "http://localhost:8098"}/doc`,
+      url: `${process.env.APP_HOST || "localhost:8098"}/doc`,
       source: "./src/modules/dj-dps-commands",
       includes:["**/*.(md|markdown)","!**/node_modules"],
       output: "./.tmp/public/doc",
