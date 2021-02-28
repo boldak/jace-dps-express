@@ -7,11 +7,12 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="{{ assets['main.css'] }}">
-  <link rel="stylesheet" href="{{ assets['vuetify.min.css'] }}">
-  <link rel="stylesheet" href="{{ assets['github-gist.css'] }}">
+  <link rel="preload" as="style" href="{{ assets['main.css'] }}" onload="this.rel = 'stylesheet'">
+  <link rel="preload" as="style" href="{{ assets['vuetify.min.css'] }}" onload="this.rel = 'stylesheet'">
+  <link rel="preload" as="style" href="{{ assets['github-gist.css'] }}" onload="this.rel = 'stylesheet'">
   
 </head>
+
 <body>
   
   {% include "_header.njk" %}
