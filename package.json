@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "start": "node server",
+    "jace-doc": "node ./build/jace-doc/index.js",
+    "postinstall": "npm run jace-doc"
   },
   "author": "",
   "license": "ISC",
@@ -60,6 +62,7 @@
   },
   "devDependencies": {
     "execa": "^5.0.0",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "jace-doc": "github:boldak/jace-doc"
   }
 }

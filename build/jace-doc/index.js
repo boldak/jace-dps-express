@@ -1,0 +1,1 @@
+require("jace-doc")(require("./jace-doc.config")).then(() => {})
