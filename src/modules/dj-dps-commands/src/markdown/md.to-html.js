@@ -1,6 +1,5 @@
-let marky = require( "./render")
+let jaceMark = require( "jace-mark")
 let _ = require("lodash")
-
 
 class MdImplError extends Error {
     constructor(message) {
@@ -32,31 +31,13 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
             try {
-                let options = {
-                  sanitize: false, //true,
-                  nofollow: true,
-                  linkify: true,
-                  highlightSyntax: true,
-                  prefixHeadingIds: true,
-                  enableHeadingLinkIcons: false,
-                  serveImagesWithCDN: true,
-                  debug: true,
-                  package: null, 
-                  headingAnchorClass: 'anchor',
-                  headingSvgClass: ['octicon', 'octicon-link']
-                }
-
-                options = _.extend(options, command.settings.options)
-
-                let parser = marky.getParser(options)
-                let html = parser.render(command.settings.source)//.split("\n").map( r => r.trim()).join("\n"))    
+                let html = jaceMark.render(command.settings.source,command.settings.options)    
                 state.head = {
                     type: "html",
                     data: html
                 }
                 resolve(state)
               } catch (e) {
-                // console.log(e.stack)
                 reject( new MdImplError(e.toString()))
               }
         })

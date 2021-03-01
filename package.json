@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
+    "start": "node server",
+    "jace-doc": "node ./build/jace-doc/index.js",
+    "postinstall": "npm run jace-doc"
   },
   "author": "",
   "license": "ISC",
@@ -54,13 +56,13 @@
     "express-fileupload": "^1.2.1",
     "lodash": "^4.17.20",
     "lodash-node": "^3.10.2",
-    "lodash.defaults": "^4.2.0",
     "queue-promise": "^2.1.0",
     "swagger-ui-express": "^4.1.6",
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "execa": "^5.0.0",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "jace-doc": "github:boldak/jace-doc"
   }
 }
