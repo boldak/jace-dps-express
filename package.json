@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
     "jace-doc": "node ./build/jace-doc/index.js",
-    "postinstall": "npm run jace-doc"
+    "postinstall": "npm run jace-doc",
+    "dev": "nodemon server"
   },
   "author": "",
   "license": "ISC",
@@ -62,7 +63,8 @@
   },
   "devDependencies": {
     "execa": "^5.0.0",
+    "jace-doc": "github:boldak/jace-doc",
     "jest": "^26.6.3",
-    "jace-doc": "github:boldak/jace-doc"
+    "nodemon": "^2.0.7"
   }
 }
