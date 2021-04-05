@@ -2,6 +2,8 @@ var mime = require("mime");
 var path = require("path");
 var util = require("util");
 
+
+
 var ExportImplError = function(message) {
     this.message = message;
     this.name = "Command 'export' implementation error";
@@ -31,7 +33,7 @@ var impl = function(data, params, locale, script, scriptContext) {
     
     var filename = params.file;
     if (filename) {
-        var mimeType = mime.lookup(path.basename(filename));
+        var mimeType = mime.getType(path.basename(filename));
         var exporter = exportMap[mimeType]
         if (exporter) {
             try {
