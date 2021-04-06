@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "iconv-lite": "^0.6.2",
-    "json2csv": "^5.0.6",
+    "json2csv": "^3.7.2",
     "lodash-node": "^3.10.2",
     "mime": "^2.5.0",
     "node-xlsx": "^0.16.1"
