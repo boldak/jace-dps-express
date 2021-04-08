@@ -46,7 +46,7 @@ module.exports = {
                     let collection = db.collection(service_config.db.collection)
                     collection.aggregate(query).toArray()
                         .then(res => {
-                        console.log(res)    
+                        // console.log(res)    
                         state.head = {
                             type: "json",
                             data: res

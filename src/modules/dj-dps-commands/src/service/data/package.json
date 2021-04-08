@@ -1,0 +1,22 @@
+{
+  "name": "dps-command-pack-service-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autodetect-decoder-stream": "^1.0.3",
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "csv-reader": "^1.0.7",
+    "csvjson": "^5.1.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.6",
+    "uuid": "^8.3.2"
+  }
+}
