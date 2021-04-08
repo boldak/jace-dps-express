@@ -35,6 +35,7 @@
     "dps-command-pack-permissions": "file:src/modules/dj-dps-commands/src/permissions",
     "dps-command-pack-profile": "file:src/modules/dj-dps-commands/src/profile",
     "dps-command-pack-sendmail": "file:src/modules/dj-dps-commands/src/sendmail",
+    "dps-command-pack-service-data": "file:src/modules/dj-dps-commands/src/service/data",
     "dps-command-pack-service-cypher": "file:src/modules/dj-dps-commands/src/service/cypher",
     "dps-command-pack-service-dataverse": "file:src/modules/dj-dps-commands/src/service/dataverse",
     "dps-command-pack-service-dict": "file:src/modules/dj-dps-commands/src/service/dict",
