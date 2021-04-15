@@ -18,7 +18,7 @@ module.exports = opts => new Promise((resolve, reject) => {
 	        let collection = db.collection(config.state.collection)
 	        
 	        let setter = {}
-	        setter[`${opts.dataset}.updatedAt`] = moment(new Date()).format("YYYY-MM-DD") 
+	        setter[`${opts.dataset}.updatedAt`] = moment(new Date()).format(opts.dateFormat) 
 	        setter = {$set:setter}
 
 	        collection.updateOne({},setter)

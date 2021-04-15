@@ -12,8 +12,8 @@
 			stages.checkStatus(message.dbName)
 			    .then( config => {
 			        // master.send(extend({}, message, { status: `Check...`, config }))
-			        let dbDate = moment(config.updatedAt,"YYYY-MM-DD")
-			        let now = moment(moment(new Date()).format("YYYY-MM-DD"),"YYYY-MM-DD") 
+			        let dbDate = moment(config.updatedAt, config.dateFormat)
+			        let now = moment(moment(new Date()).format(config.dateFormat),config.dateFormat) 
 			        // master.send(extend({}, message, { status: `${dbDate} vs. ${now}` }))
 			        
 			        if( dbDate.isBefore(now) ){
