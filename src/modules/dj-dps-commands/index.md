@@ -1,6 +1,6 @@
 ---
 title: JACE Data Processing Service
-refs: '*/*/index.html'
+refs: '*/*?(/doc)/index.html'
 template: index.njk
 ---
 

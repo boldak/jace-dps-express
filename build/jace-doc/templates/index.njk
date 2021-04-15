@@ -2,12 +2,11 @@
 
 {% block content %}
   
-  <article class="post">
-    <h1>{{ frontMatter.title }}</h1>
-
+  <div class="markdown-body">
+    
     
     {{ content | safe }}
-  </article>
+  </div>
   
   <ul>
     {% for page in frontMatter.refs.items %}

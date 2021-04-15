@@ -1,6 +1,6 @@
 ---
 title: Integration with third party services
-refs: '*/index.html'
+refs: '*/doc/index.html'
 template: index.njk
 ---
 
