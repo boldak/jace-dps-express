@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server",
     "jace-doc": "node ./build/jace-doc/index.js",
-    "postinstall": "npm run jace-doc"
+    "postinstall": "npm run jace-doc",
+    "dev": "nodemon server"
   },
   "author": "",
   "license": "ISC",
@@ -34,6 +35,7 @@
     "dps-command-pack-permissions": "file:src/modules/dj-dps-commands/src/permissions",
     "dps-command-pack-profile": "file:src/modules/dj-dps-commands/src/profile",
     "dps-command-pack-sendmail": "file:src/modules/dj-dps-commands/src/sendmail",
+    "dps-command-pack-service-data": "file:src/modules/dj-dps-commands/src/service/data",
     "dps-command-pack-service-cypher": "file:src/modules/dj-dps-commands/src/service/cypher",
     "dps-command-pack-service-dataverse": "file:src/modules/dj-dps-commands/src/service/dataverse",
     "dps-command-pack-service-dict": "file:src/modules/dj-dps-commands/src/service/dict",
@@ -62,7 +64,9 @@
   },
   "devDependencies": {
     "execa": "^5.0.0",
+    "jace-doc": "github:boldak/jace-doc",
     "jest": "^26.6.3",
-    "jace-doc": "github:boldak/jace-doc"
+    "nodemon": "^2.0.7",
+    "request": "^2.88.2"
   }
 }

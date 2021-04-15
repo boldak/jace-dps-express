@@ -1,12 +1,12 @@
 let util = require("util");
-let _ = require("lodash-node");
+let _ = require("lodash");
 
-let CountByImplError = function(message) {
-    this.message = message;
-    this.name = "Command 'collection.map' implementation error";
-}
-CountByImplError.prototype = Object.create(Error.prototype);
-CountByImplError.prototype.constructor = CountByImplError;
+// let CountByImplError = function(message) {
+//     this.message = message;
+//     this.name = "Command 'collection.map' implementation error";
+// }
+// CountByImplError.prototype = Object.create(Error.prototype);
+// CountByImplError.prototype.constructor = CountByImplError;
 
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
     execute: function(command, state, config) {
         
         if (!util.isArray(state.head.data)) 
-            throw new CountByImplError("Incompatible context type: '" + (typeof state.head.data)+".")
+            throw new Error(`'collection.countby' implementation error: Incompatible context type: '${typeof state.head.data}'.`)
              
         command.settings.mapper = (command.settings.mapper) ? command.settings.mapper : item => item 
         
@@ -50,9 +50,9 @@ module.exports = {
                 data: _.countBy(state.head.data, command.settings.mapper),
                 type: "json"
             }
-
+        
         } catch (e) {
-            throw new CountByImplError(e.toString())
+            throw new Error(e.toString())
         }
 
         return state;

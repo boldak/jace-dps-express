@@ -14,5 +14,7 @@ module.exports = [
 .concat(require("./github"))
 .concat(require("./jace-nlp"))
 .concat(require("./dataverse"))
+.concat(require("./data"))
+
 
 	

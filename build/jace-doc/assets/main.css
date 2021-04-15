@@ -11,14 +11,21 @@
   margin: 1.5rem auto;
 }
 
-.header h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
+.header-anchor {
+	display: none;
 }
 
-pre {
-    font-size: 1em;
-    margin: 1em 0;
-    padding: 1em 2em;
-    background: #fafafa;
+.markdown-body {
+	/*box-sizing: border-box;*/
+	min-width: 200px;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 45px;
 }
+
+@media (max-width: 767px) {
+	.markdown-body {
+		padding: 15px;
+	}
+}
+

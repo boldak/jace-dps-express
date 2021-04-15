@@ -32,6 +32,7 @@ module.exports =
         .concat(require("./src/service"))
         .concat(require("./src/markdown"))
         .concat(require("./src/lexer"))
+        .concat(require("./src/simulation"))
         
         
         

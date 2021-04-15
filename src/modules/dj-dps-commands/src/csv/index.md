@@ -7,7 +7,7 @@ template: index.njk
 
 For example you can inject csv data and manipulate it:
 
-```js
+```dps
 
 // Defines data via csv-injection 
 

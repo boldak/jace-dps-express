@@ -39,9 +39,9 @@ module.exports = {
                 let url = command.settings.on || connectionUrl 
                 
                 let db = command.settings.db || "dj-storage"               
-                let parsed = require("url").parse(url).pathname
-                let pathNames = (parsed) ? parsed.split("/") : []
-                if(pathNames.length > 0) db = pathNames[pathNames.length-1]
+                // let parsed = require("url").parse(url).pathname
+                // let pathNames = (parsed) ? parsed.split("/") : []
+                // if(pathNames.length > 0) db = pathNames[pathNames.length-1]
                 
                 let client
                 mongo.connect(url, {
@@ -53,7 +53,12 @@ module.exports = {
                     return client.db(db).listCollections().toArray()
                 })
                 .then ( res => {
+                    console.log(url,db)
                         state.head = {
+                            query:{
+                                url,
+                                db
+                            },
                             type: "json",
                             data: res
                         }

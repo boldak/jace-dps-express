@@ -27,6 +27,7 @@ module.exports = {
         // "sort": "sort",
         // "orderBy":"sort",
         // "aggregate": "aggregate",
+        "db":"db",
         "from":"collection",
         "collection":"collection",
         "on":"on",
@@ -55,10 +56,10 @@ module.exports = {
             database = parts[0]
         }  
 
-        let url = command.settings.on || connectionUrl
-        let parsed = require("url").parse(url).pathname
-        let pathNames = (parsed) ? parsed.split("/") : []
-        if(pathNames.length > 0) database = pathNames[pathNames.length-1]
+        let url = (command.settings.on) ? command.settings.on : connectionUrl
+        // let parsed = require("url").parse(url).pathname
+        // let pathNames = (parsed) ? parsed.split("/") : []
+        // if(pathNames.length > 0) database = pathNames[pathNames.length-1]
         
 
 
@@ -76,12 +77,12 @@ module.exports = {
                     let collection = db.collection(command.settings.collection)
                     collection.aggregate(query).toArray()
                         .then(res => {
-                        state.head = {
-                            type: "json",
-                            data: res
-                        }
-                        resolve(state)
-                        client.close()
+                            state.head = {
+                                type: "json",
+                                data: res
+                            }
+                            resolve(state)
+                            client.close()
                         .catch( e => {
                             reject(new MongoDBImplError(e.toString()))    
                         })
