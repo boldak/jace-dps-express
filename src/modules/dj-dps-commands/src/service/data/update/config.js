@@ -11,6 +11,7 @@ module.exports = {
 			collection: "covid_ua",
 			dateColumn: "zvit_date",
 			dateFormat:"YYYY-MM-DD",
+			updater:"./updater.js",
 			sourceUrl:"https://raw.githubusercontent.com/VasiaPiven/covid19_ua/master/covid19_by_area_type_hosp_dynamics.csv"
 		},
 		
@@ -20,6 +21,7 @@ module.exports = {
 				dateColumn:"date",
 				dateFormat:"YYYY-MM-DD",
 				collection: "covid_owid",
+				updater:"./updater.js",
 				sourceUrl:"https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
 		},
 
@@ -29,6 +31,7 @@ module.exports = {
 			dateColumn:"Date",
 			dateFormat:"YYYYMMDD",
 			collection:"indexes",
+			updater:"./updater.js",
 			sourceUrl:"https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
 		},
 
@@ -38,7 +41,17 @@ module.exports = {
 			dateColumn:"Date",
 			dateFormat:"YYYYMMDD",
 			collection:"notes",
+			updater:"./updater.js",
 			sourceUrl:"https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest_responses.csv"
+		},
+
+		sota: {
+			url:"mongodb+srv://jace:jace@cluster0.qdn15.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+			name:"OxCGRT",
+			dateColumn:"date",
+			dateFormat:"YYYY-MM-DD",
+			collection:"sota",
+			updater:"./sota-updater.js"
 		}
 
 	}

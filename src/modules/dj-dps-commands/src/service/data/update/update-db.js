@@ -3,6 +3,7 @@ const Proxy = require("./lib/ddp/proxy")
 
 let updater= null
 let status = ""
+let updateConfig = require("./config")
 
 class DataImplError extends Error {
     constructor(message) {
@@ -32,7 +33,8 @@ module.exports = {
         let db = command.settings.db || ((command.settings.data) ? command.settings.data : state.head.data)
         if (!db) throw new DataImplError(`No db available`)
 
-        console.log("Update", db)    
+        console.log("Update", db) 
+        console.log(updateConfig)   
 
         return new Promise((resolve, reject) => {
             
@@ -43,8 +45,8 @@ module.exports = {
                 }
                 resolve(state)
             } else {
-                
-                Proxy(require.resolve("./updater.js"))
+                console.log(`activate ${require.resolve(updateConfig.db[db].updater)}`)
+                Proxy(require.resolve(updateConfig.db[db].updater))
                     .then( p => {
                         
                         updater = p

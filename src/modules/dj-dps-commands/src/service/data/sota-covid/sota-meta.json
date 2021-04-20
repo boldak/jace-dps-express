@@ -1,0 +1,388 @@
+ [
+  {
+   "column": "date",
+   "category": "Загальна інформація",
+   "title": "Дата",
+   "description": "Загальна інформація: Дата"
+  },
+  {
+   "column": "regionName",
+   "category": "Загальна інформація",
+   "title": "Регіон",
+   "description": "Загальна інформація: Регіон"
+  },
+
+  {
+   "column": "bedReservedOxygen",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Виділено (всього) ліжок з підведеним киснем",
+   "description": "Ліжковий фонд під COVID-19: Виділено (всього) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedReservedOxygen",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Виділено (всього) ліжок з підведеним киснем",
+   "description": "Ліжковий фонд під COVID-19: Виділено (всього) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedUsedOxygen",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (всього) ліжок з підведеним киснем",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (всього) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedUsedConfirmedOxygen",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (COVID-19) ліжок з підведеним киснем",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (COVID-19) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedUsedSuspiciousOxygen",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (підозра) ліжок з підведеним киснем",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (підозра) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedReservedReanimation",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Виділено (всього) ліжок інтенсивної терапії",
+   "description": "Ліжковий фонд під COVID-19: Виділено (всього) ліжок інтенсивної терапії"
+  },
+  {
+   "column": "bedUsedReanimation",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (всього) ліжок інтенсивної терапії",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (всього) ліжок інтенсивної терапії"
+  },
+  {
+   "column": "bedUsedConfirmedReanimation",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (COVID-19) ліжок інтенсивної терапії",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (COVID-19) ліжок інтенсивної терапії"
+  },
+  {
+   "column": "bedUsedSuspiciousReanimation",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (підозра) ліжок інтенсивної терапії",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (підозра) ліжок інтенсивної терапії"
+  }
+,
+  {
+   "column": "bedReservedChildren",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Виділено (всього) ліжок дитячих",
+   "description": "Ліжковий фонд під COVID-19: Виділено (всього) ліжок дитячих"
+  },
+  {
+   "column": "bedUsedChildren",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (всього) ліжок дитячих",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (всього) ліжок дитячих"
+  },
+  {
+   "column": "bedUsedConfirmedChildren",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (COVID-19) ліжок дитячих",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (COVID-19) ліжок дитячих"
+  },
+  {
+   "column": "bedUsedSuspiciousChildren",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (підозра) ліжок дитячих",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (підозра) ліжок дитячих"
+  }
+ ,
+  {
+   "column": "bedReservedMaternity",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Виділено (всього) ліжок пологових",
+   "description": "Ліжковий фонд під COVID-19: Виділено (всього) ліжок пологових"
+  },
+  {
+   "column": "bedUsedMaternity",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (всього) ліжок пологових",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (всього) ліжок пологових"
+  },
+  {
+   "column": "bedUsedConfirmedMaternity",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (COVID-19) ліжок пологових",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (COVID-19) ліжок пологових"
+  },
+  {
+   "column": "bedUsedSuspiciousMaternity",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (підозра) ліжок пологових",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (підозра) ліжок пологових"
+  }
+ ,
+  {
+   "column": "bedReservedInfectious",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Виділено (всього) ліжок всіх типів",
+   "description": "Ліжковий фонд під COVID-19: Виділено (всього) ліжок всіх типів"
+  },
+  {
+   "column": "bedUsedInfectious",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (всього) ліжок всіх типів",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (всього) ліжок всіх типів"
+  },
+  {
+   "column": "bedUsedConfirmedInfectious",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (COVID-19) ліжок всіх типів",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (COVID-19) ліжок всіх типів"
+  },
+  {
+   "column": "bedUsedSuspiciousInfectious",
+   "category": "Ліжковий фонд під COVID-19",
+   "title": "Зайнято (підозра) ліжок всіх типів",
+   "description": "Ліжковий фонд під COVID-19: Зайнято (підозра) ліжок всіх типів"
+  }
+ ,
+  {
+   "column": "bedReservedTotal",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (всього) ліжок всіх типів",
+   "description": "Загальний ліжковий фонд: Виділено (всього) ліжок всіх типів"
+  },
+  {
+   "column": "bedReservedTotalCovid",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (COVID-19) ліжок всіх типів",
+   "description": "Загальний ліжковий фонд: Виділено (COVID-19) ліжок всіх типів"
+  },
+  {
+   "column": "bedReservedTotalOther",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (інше) ліжок всіх типів",
+   "description": "Загальний ліжковий фонд: Виділено (інше) ліжок всіх типів"
+  },
+  {
+   "column": "bedUsedTotalCovid",
+   "category": "Загальний ліжковий фонд",
+   "title": "Зайнято (COVID-19) ліжок всіх типів",
+   "description": "Загальний ліжковий фонд: Зайнято (COVID-19) ліжок всіх типів"
+  }
+ ,
+  {
+   "column": "bedReservedOxigen",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (всього) ліжок з підведеним киснем",
+   "description": "Загальний ліжковий фонд: Виділено (всього) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedReservedOxigenCovid",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (COVID-19) ліжок з підведеним киснем",
+   "description": "Загальний ліжковий фонд: Виділено (COVID-19) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedReservedOxigenOther",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (інше) ліжок з підведеним киснем",
+   "description": "Загальний ліжковий фонд: Виділено (інше) ліжок з підведеним киснем"
+  },
+  {
+   "column": "bedUsedOxigenCovid",
+   "category": "Загальний ліжковий фонд",
+   "title": "Зайнято (COVID-19) ліжок з підведеним киснем",
+   "description": "Загальний ліжковий фонд: Зайнято (COVID-19) ліжок з підведеним киснем"
+  }
+ ,
+  {
+   "column": "bedReservedReanimation",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (всього) ліжок інтенсивної терапії",
+   "description": "Загальний ліжковий фонд: Виділено (всього) ліжок інтенсивної терапії"
+  },
+  {
+   "column": "bedReservedReanimationCovid",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (COVID-19) ліжок інтенсивної терапії",
+   "description": "Загальний ліжковий фонд: Виділено (COVID-19) ліжок інтенсивної терапії"
+  },
+  {
+   "column": "bedReservedReanimationOther",
+   "category": "Загальний ліжковий фонд",
+   "title": "Виділено (інше) ліжок інтенсивної терапії",
+   "description": "Загальний ліжковий фонд: Виділено (інше) ліжок інтенсивної терапії"
+  },
+  {
+   "column": "bedUsedReanimationCovid",
+   "category": "Загальний ліжковий фонд",
+   "title": "Зайнято (COVID-19) ліжок інтенсивної терапії",
+   "description": "Загальний ліжковий фонд: Зайнято (COVID-19) ліжок інтенсивної терапії"
+  }
+ ,
+  {
+   "column": "HospitalizedPerDay",
+   "category": "Госпіталізація",
+   "title": "Госпіталізовано за добу",
+   "description": "Госпіталізація: Госпіталізовано за добу"
+  },
+  {
+   "column": "RecoveredPerDay",
+   "category": "Госпіталізація",
+   "title": "Виписано за добу",
+   "description": "Госпіталізація: Виписано за добу"
+  }
+ ,
+  {
+   "column": "usedIvm",
+   "category": "Госпіталізація",
+   "title": "Підключено до ШВЛ",
+   "description": "Госпіталізація: Підключено до ШВЛ"
+  }
+ ,
+  {
+   "column": "usedEkmoCovid",
+   "category": "Госпіталізація",
+   "title": "Підключено до ЕКМО (COVID-19)",
+   "description": "Госпіталізація: Підключено до ЕКМО (COVID-19)"
+  },
+  {
+   "column": "usedEkmoSuspicious",
+   "category": "Госпіталізація",
+   "title": "Підключено до ЕКМО (підозра)",
+   "description": "Госпіталізація: Підключено до ЕКМО (підозра)"
+  }
+ ,
+  {
+   "column": "vaccinationAstraZeneca1",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "AstraZeneca (1 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): AstraZeneca (1 доза)"
+  },
+  {
+   "column": "vaccinationPfizer1",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "Pfizer-BioNTech (1 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): Pfizer-BioNTech (1 доза)"
+  },
+  {
+   "column": "vaccinationSinovac1",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "Sinovac Biotech (1 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): Sinovac Biotech (1 доза)"
+  },
+  {
+   "column": "vaccinationNovavax1",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "Novavax (1 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): Novavax (1 доза)"
+  }
+ ,
+  {
+   "column": "vaccinationAstraZeneca2",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "AstraZeneca (2 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): AstraZeneca (2 доза)"
+  },
+  {
+   "column": "vaccinationPfizer2",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "Pfizer-BioNTech (2 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): Pfizer-BioNTech (2 доза)"
+  },
+  {
+   "column": "vaccinationSinovac2",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "Sinovac Biotech (2 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): Sinovac Biotech (2 доза)"
+  },
+  {
+   "column": "vaccinationNovavax2",
+   "category": "Динаміка проведення щеплення (вакцина)",
+   "title": "Novavax (2 доза)",
+   "description": "Динаміка проведення щеплення (вакцина): Novavax (2 доза)"
+  }
+ ,
+  {
+   "column": "vaccinationAge18_20_1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "18-20 (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 18-20 (1 доза)"
+  },
+  {
+   "column": "vaccinationAge20_39_1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "20-39 (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 20-39 (1 доза)"
+  },
+  {
+   "column": "vaccinationAge40_49_1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "40-49 (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 40-49 (1 доза)"
+  },
+  {
+   "column": "vaccinationAge50_59_1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "50-59 (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 50-59 (1 доза)"
+  },
+  {
+   "column": "vaccinationAge60_69_1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "60-69 (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 60-69 (1 доза)"
+  },
+  {
+   "column": "vaccinationAge70_79_1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "70-79 (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 70-79 (1 доза)"
+  },
+  {
+   "column": "vaccinationAge80__1",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "80+ (1 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 80+ (1 доза)"
+  }
+ ,
+  {
+   "column": "vaccinationAge18_20_2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "18-20 (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 18-20 (2 доза)"
+  },
+  {
+   "column": "vaccinationAge20_39_2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "20-39 (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 20-39 (2 доза)"
+  },
+  {
+   "column": "vaccinationAge40_49_2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "40-49 (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 40-49 (2 доза)"
+  },
+  {
+   "column": "vaccinationAge50_59_2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "50-59 (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 50-59 (2 доза)"
+  },
+  {
+   "column": "vaccinationAge60_69_2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "60-69 (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 60-69 (2 доза)"
+  },
+  {
+   "column": "vaccinationAge70_79_2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "70-79 (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 70-79 (2 доза)"
+  },
+  {
+   "column": "vaccinationAge80__2",
+   "category": "Динаміка проведення щеплення (вікова група)",
+   "title": "80+ (2 доза)",
+   "description": "Динаміка проведення щеплення (вікова група): 80+ (2 доза)"
+  }
+ ]
