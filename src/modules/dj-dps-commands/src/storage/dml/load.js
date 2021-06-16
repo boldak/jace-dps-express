@@ -10,6 +10,7 @@ var set = require("../..//var/set").implementation;
 let util = require("util");
 
 
+
 var SourceImplError = function(message) {
     this.message = message;
     this.name = "Command 'source' implementation error";

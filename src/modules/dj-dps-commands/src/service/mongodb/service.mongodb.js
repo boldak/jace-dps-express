@@ -17,7 +17,9 @@ module.exports = {
 
     synonims: {
         "service.mongodb": "service.mongodb",
-        "service.mongodb.find": "service.mongodb"
+        "service.mongodb.find": "service.mongodb",
+        "service.mongodb.aggregate": "service.mongodb",
+        
     },
 
     "internal aliases": {

@@ -16,7 +16,8 @@ module.exports = {
     name: "service.mongodb.remove",
 
     synonims: {
-        "service.mongodb.remove": "service.mongodb.remove"
+        "service.mongodb.remove": "service.mongodb.remove",
+        "service.mongodb.delete": "service.mongodb.remove"
     },
 
     "internal aliases": {
@@ -36,7 +37,8 @@ module.exports = {
     },
 
     defaultProperty: {
-        "service.mongodb.remove": "query"
+        "service.mongodb.remove": "query",
+        "service.mongodb.delete": "query"
     },
 
     execute: function(command, state, config) {

@@ -10,6 +10,8 @@ let _ = require("lodash-node");
 var vm = require("vm");
 let moment = require("moment")
 
+let ObjectId = require("mongodb").ObjectId
+
 var ScriptError = function(message) {
     this.message = message;
     this.name = "";
@@ -421,6 +423,7 @@ Script.prototype.execute = function(command, state, config) {
                         sandbox._ = _;
                         sandbox.moment = moment;
                         sandbox.$scope = c;
+                        sandbox.ObjectId = ObjectId
 
 
                         let scriptable = `

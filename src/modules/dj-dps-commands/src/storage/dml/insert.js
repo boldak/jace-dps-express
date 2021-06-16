@@ -30,6 +30,10 @@ var impl = function(params, state) {
         // if(pathNames.length > 0) database = pathNames[pathNames.length-1]
         
         let client
+
+        params.values.forEach( r => {
+            r.updatedAt = new Date()
+        })  
         
         return mongo.connect(config.url, config.options)
                 .then( c => {

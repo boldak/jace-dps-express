@@ -20,7 +20,10 @@ module.exports = {
         "service.mongodb.insert": "service.mongodb.replace",
         "service.mongodb.create": "service.mongodb.replace",
         "service.mongodb.update": "service.mongodb.replace",
-        "service.mongodb.updateOrCreate": "service.mongodb.replace"
+        "service.mongodb.updateOrCreate": "service.mongodb.replace",
+        "service.mongodb.createOrReplace": "service.mongodb.replace",
+        "service.mongodb.createOrUpdate": "service.mongodb.replace",
+        
     },
 
     "internal aliases": {

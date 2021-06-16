@@ -7,6 +7,7 @@ let _ = require("lodash-node");
 let moment = require("moment")
 // let Promise = require("bluebird")
 let runDpsCommand = require("../dps/script")
+let ObjectId = require("mongodb").ObjectId
 
 
 var EvalImplError = function(message) {
@@ -30,6 +31,7 @@ var implementation = function(state, config){
                 sandbox.btoa = require("btoa")
                 sandbox.decodeURIComponent = decodeURIComponent
                 sandbox.encodeURIComponent = encodeURIComponent
+                sandbox.ObjectId = ObjectId
                 sandbox.Promise = Promise
                 // sandbox.console = console
 

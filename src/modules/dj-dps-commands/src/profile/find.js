@@ -12,23 +12,21 @@ class ProfileFindImplError extends Error {
 
 
 let getUrl = function(url) {
-    
+    // console.log(url)
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'GET',
-            headers: {
-                'User-Agent': 'Request-Promise'
-            },
-            uri: url,
-            json: true
+            uri: url
         }
         
-        http(options)
+        // http(options)
+        http.get(url)
             .then(function(result) {
                 resolve(result.data)
             })
             .catch(function(e) {
-                reject(new ProfileFindImplError(url+" > "+e.toString()))
+                resolve()
+                //reject(new ProfileFindImplError(url+" > "+e.toString()))
             })
     })
 }
@@ -42,6 +40,11 @@ let getGravatarProfile = (email) => {
     return new Promise((resolve, reject) => {
         getUrl(gravatar.getProfileUrl(options))
         .then(res => {
+            // console.log("GRAVATAR", res)
+            if(!res){
+                resolve({type:"gravatar"})
+                return
+            }
             resolve( {
                 type: "gravatar",
                 profile: {
@@ -64,6 +67,12 @@ let getGoogleProfile = (email) => {
     return new Promise((resolve, reject) => {
         getUrl(avatarUrl)
         .then(res => {
+            // console.log("GOOGLE", res)
+            if(!res){
+                resolve({type:"google"})
+                return
+            }
+
             let profile = {
                 name:res.entry.gphoto$nickname.$t,
                 photo:res.entry.gphoto$thumbnail.$t
