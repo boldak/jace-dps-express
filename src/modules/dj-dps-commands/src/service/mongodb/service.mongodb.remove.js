@@ -83,13 +83,15 @@ module.exports = {
                                 data: res
                             }
                             resolve(state)
-                            client.close()
+                            if(client) client.close()
                         .catch( e => {
-                            reject(new MongoDBImplError(e.toString()))    
+                            reject(new MongoDBImplError(e.toString()))
+                            if(client) client.close()    
                         })
                     })
                     .catch(err => {
                         reject(new MongoDBImplError(err.toString()))
+                        if(client) client.close()
                     })
                 })    
 

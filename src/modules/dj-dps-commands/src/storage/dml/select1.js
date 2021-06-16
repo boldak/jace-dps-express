@@ -119,17 +119,17 @@ module.exports =  {
                                 }
                             } catch (e) {
                                 reject(new DMLSelectImplError(e.toString()))
-                                client.close()    
+                                if(client) client.close()    
                             }        
                         })    
                         .catch( e => {
                             reject(new DMLSelectImplError(e.toString()))
-                            client.close()    
+                            if(client) client.close()    
                         })
                 })    
                 .catch(err => {
                     reject(new DMLSelectImplError(err.toString()))
-                    client.close()
+                    if(client) client.close()
                 })
                 // .finaly(() => {
                 //     client.close()
