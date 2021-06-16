@@ -1,8 +1,7 @@
 let Promise = require("bluebird")
 const mongo = require('mongodb').MongoClient //Promise.promisifyAll(require('mongodb').MongoClient)
 
-let connectionUrl = process.env.MONGOLAB_URI || process.env.MONGODB_URL || "mongodb://localhost:27017"
-
+let connectionUrl = process.env.MONGOLAB_URI || process.env.MONGODB_URL || process.env.ATLAS_URL || "mongodb://localhost:27017"
 
 class MongoDBImplError extends Error {
     constructor(message) {
