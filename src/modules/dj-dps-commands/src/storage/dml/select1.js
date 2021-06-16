@@ -87,7 +87,7 @@ module.exports =  {
         // if(pathNames.length > 0) database = pathNames[pathNames.length-1]
         
 
-
+        console.log("connect to ", config.url)
 
         let client
         return new Promise((resolve, reject) => {
