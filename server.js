@@ -29,15 +29,16 @@ app.use(bodyParser.json({
 	limit: '50mb'
 }));
 
-app.all("*",  (req, res, next) => {  
+app.all("/*",  (req, res, next) => {  
     req.fullUrl = req.protocol + '://' + req.hostname + ":"+ config.service.port+req.originalUrl
+    res.header('Access-Control-Allow-Origin', '*');
     next()
 })
 
 // app.use(bodyParser.json())
 
 app.post("/api/script", require("./src/controller"))
-
+ 
 app.listen(config.service.port, () => {
   console.log(`JACE-DPS  as "${config.service.name}" service starts on ${config.service.host}:${config.service.port}`);
 });
