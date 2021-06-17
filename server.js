@@ -6,8 +6,17 @@ const fileUpload = require('express-fileupload');
 const config  = require("./config")
 
 const app = express();
-app.use(express.static(config.service.public));
+
 app.use(CORS())
+
+app.all("/*",  (req, res, next) => {  
+    req.fullUrl = req.protocol + '://' + req.hostname + ":"+ config.service.port+req.originalUrl
+    res.header('Access-Control-Allow-Origin', '*');
+    next()
+})
+
+app.use(express.static(config.service.public));
+
 app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : config.service.upload,
@@ -29,11 +38,6 @@ app.use(bodyParser.json({
 	limit: '50mb'
 }));
 
-app.all("/*",  (req, res, next) => {  
-    req.fullUrl = req.protocol + '://' + req.hostname + ":"+ config.service.port+req.originalUrl
-    res.header('Access-Control-Allow-Origin', '*');
-    next()
-})
 
 // app.use(bodyParser.json())
 
