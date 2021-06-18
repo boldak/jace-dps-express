@@ -1,9 +1,28 @@
 
 const Proxy = require("./lib/ddp/proxy")
+const moment = require("moment")
 
-let updater= null
-let status = ""
+
+let updater = {
+    covid_nszu:null,
+    covid_owid: null,
+    OxCGRT_indexes: null,
+    OxCGRT_notes: null,
+    sota: null
+}
+
+let status = {
+    covid_nszu:{},
+    covid_owid: {},
+    OxCGRT_indexes: {},
+    OxCGRT_notes: {},
+    sota: {}
+}
+
 let updateConfig = require("./config")
+
+let logger = require("./lib/logger")
+
 
 class DataImplError extends Error {
     constructor(message) {
@@ -33,52 +52,78 @@ module.exports = {
         let db = command.settings.db || ((command.settings.data) ? command.settings.data : state.head.data)
         if (!db) throw new DataImplError(`No db available`)
 
-        console.log("Update", db) 
-        console.log(updateConfig)   
+        // logger.print("Update", db) 
+        // logger.print(updateConfig)   
 
         return new Promise((resolve, reject) => {
-            
-            if( updater ) {
-                state.head = {
-                    type: "json",
-                    data: status
+
+            if( status[db].complete && status[db].updatedAt){
+                if( moment(new Date()).isSame(status[db].updatedAt, 'day')){
+                    state.head = {
+                        type: "json",
+                        data: status[db]
+                    }
+                    resolve(state)
+                    return    
                 }
-                resolve(state)
-            } else {
-                console.log(`activate ${require.resolve(updateConfig.db[db].updater)}`)
-                Proxy(require.resolve(updateConfig.db[db].updater))
-                    .then( p => {
-                        
-                        updater = p
-                        status = "Prepare update..."
-                        
-                        updater.on("message", message => {
-                            console.log(`Update status: ${message.status}`,message.config)
-                            status = message.status
-                        })
-                        
-                        updater.on("close", (code) => {
-                            console.log(`Update status: closed`)
-                            state = "Latest version"
-                            updater = null
-                        })
-
-                        updater.execute({
-                            path:"update",
-                            dbName: db
-                        }).then(res => {
-                            status = res.status
-                            state.head = {
-                                type: "json",
-                                data: status
-                            }
-                            resolve(state)            
-                        })
-
-
-                    })
             }
 
+            
+            if( updater[db] ) {
+                state.head = {
+                    type: "json",
+                    data: status[db]
+                }
+                resolve(state)
+                return
+            } 
+                
+            logger.print(`${db}: activate ${require.resolve(updateConfig.db[db].updater)}`)
+            
+            Proxy(require.resolve(updateConfig.db[db].updater))
+                .then( p => {
+                    
+                    updater[db] = p
+                    status[db] = { 
+                        message :"Prepare update...",
+                        complete: false
+                    }    
+
+                    logger.print(`${db}: Prepare update...`)
+                        
+                    updater[db].on("message", message => {
+                        logger.print(`${db}: ${JSON.stringify(message)}`)
+                        logger.print(`${db}: `)
+                        
+                        status[db].message = message.status
+                    })
+                    
+                    updater[db].on("close", (code) => {
+                        logger.print(`Update status: Latest version`)
+                        
+                        status[db].message = "Latest version"
+                        status[db].complete = true
+                        status[db].updatedAt = moment(new Date())
+                        
+                        
+                        updater[db] = null
+                    })
+
+                    updater[db].execute({
+                        path:"update",
+                        dbName: db
+                    }).then(res => {
+                        // status = res.status
+                        state.head = {
+                            type: "json",
+                            data: status[db]
+                        }
+                        resolve(state)            
+                    })
+
+
+                })
+            
                         
     
         })

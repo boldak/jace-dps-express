@@ -4,6 +4,8 @@ const AutoDetectDecoderStream = require('autodetect-decoder-stream');
 const { resolve } = require("path")
 const { zipObject, extend } = require("lodash")
 const fse = require("fs-extra")	    
+const moment = require("moment")
+
 
 module.exports = config => new Promise( (resolve,reject) => {
 	let inputStream = createReadStream(config.filePath)
@@ -24,7 +26,9 @@ module.exports = config => new Promise( (resolve,reject) => {
 	        } else {
 	        	if( count > 1){
 	        		let data = zipObject(fields,row)
-	        		if(data[config.dateColumn] > config.lastDate){
+	        		// config._send({status: `data: ${JSON.stringify(data)}`})
+	        			
+	        		if( moment(data[config.dateColumn], config.dateFormat).isAfter(moment(config.lastDate,config.dateFormat))) {
 	        			insertedRows.push(data)
 	        		}
 	        	}
@@ -33,7 +37,7 @@ module.exports = config => new Promise( (resolve,reject) => {
 	        count++	
 	        
 	    }).on('end', function (data) {
-	    	fse.remove(config.dir)
+	    	// fse.remove(config.dir)
 	        resolve( extend(config, {insertedRows}))
 	    });
 })

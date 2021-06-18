@@ -12,7 +12,7 @@ module.exports = {
 			dateColumn: "zvit_date",
 			dateFormat:"YYYY-MM-DD",
 			updater:"./updater.js",
-			sourceUrl:"https://raw.githubusercontent.com/VasiaPiven/covid19_ua/master/covid19_by_area_type_hosp_dynamics.csv"
+			sourceUrl:"MMhttps://github.com/VasiaPiven/covid19_ua/blob/master/covid19_by_area_type_hosp_dynamics.zip?raw=true"
 		},
 		
 		covid_owid:{

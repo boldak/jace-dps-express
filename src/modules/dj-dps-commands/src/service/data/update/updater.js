@@ -16,29 +16,46 @@
 			        let now = moment(moment(new Date()).format(config.dateFormat),config.dateFormat) 
 			        // master.send(extend({}, message, { status: `${dbDate} vs. ${now}` }))
 			        
+			        config._send = obj => {
+			        	master.send(extend({}, message, obj))
+			        } 
+			        
+
 			        if( dbDate.isBefore(now) ){
 						
-						master.send(extend({}, message, { status: `Update started...`, config}))
-			        	
+						// master.send(extend({}, message, { status: `Update started...`, config}))
+						master.send(extend({}, message, { status: `Download data...`, config}))
+			        				        	
 
 			        	stages.download(config)
+			        	
 			        	.then( config => {
-					        master.send(extend({}, message, { status: `Prepare update...`, config}))
+					        master.send(extend({}, message, { status: `Configure update...`, config}))
 			        	    return stages.prepare(config)
 					    })
+					    
 					    .then(config => {
-					        master.send(extend({}, message, { status: `Process data...`}))
+					    	// console.log("!!!!", config)
+					        master.send(extend({}, message, { status: `Unzip data...`, config}))
+			        	    return stages.unzipCsv(config)
+					    })
+
+					    .then(config => {
+					        master.send(extend({}, message, { status: `Process data...`, config}))
 			        	    return stages.processCsv(config)
 					    })
+					    
 					    .then( config => {
 					        // console.log(config)
-					        master.send(extend({}, message, { status: `${config.insertedRows.length} rows will be inserted...`}))
+					        master.send(extend({}, message, { status: `${config.insertedRows.length} rows will be inserted...`, config}))
 			        	    return stages.insertRows(config)
 					    })
+					    
 					    .then( config => {
 					        master.send(extend({}, message, { status: `Update status...`, config}))
 			        		return stages.updateStatus(config)
 					    })
+					    
 					    .then( config => {
 					      	master.send(extend({}, message, { status: `Latest version`, config}))
 							process.exit(0)

@@ -5,5 +5,6 @@ module.exports = {
 	processCsv: require("./process-csv"),
 	insertRows: require("./insert_rows"),
 	updateStatus: require("./update-status"),
-	fetchSota: require("./fetch-sota")
+	fetchSota: require("./fetch-sota"),
+	unzipCsv:require("./unzip-csv")
 }

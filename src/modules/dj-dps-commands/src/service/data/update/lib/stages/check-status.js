@@ -2,10 +2,10 @@
 const mongo = require('mongodb').MongoClient
 const config = require("../../config")
 const { extend } = require("lodash")
-
 let client
 
 module.exports = dbName => new Promise((resolve, reject) => {
+
 	mongo.connect(config.state.url, {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
@@ -16,12 +16,12 @@ module.exports = dbName => new Promise((resolve, reject) => {
 	        let collection = db.collection(config.state.collection)
 	        collection.find({}).toArray()
 	        	.then( res => {
-	        		client.close()
+	        		if (client) client.close()
 
     	    		resolve( extend(res[0][dbName], {dataset:dbName}) )
 	    		})
 	    		.catch( e => {
-	    			client.close()
+	    			if (client) client.close()
     	    		reject(e.toString())	
 	    		})
 		})

@@ -37,15 +37,15 @@ module.exports = config => new Promise((resolve, reject) => {
 			  }
 			]).toArray()
 	        	.then( res => {
-	        		client.close()
+	        		if(client) client.close()
     	    		resolve( 
     	    			extend( config,{
-    	    				lastDate: res[0]._id
+    	    				lastDate: (res[0]) ? res[0]._id : "01.01.1900"
     	    			})
     	    		)	
 	    		})
 	    		.catch( e => {
-	    			client.close()
+	    			if(client) client.close()
     	    		reject(e.toString())	
 	    		})
 		})
