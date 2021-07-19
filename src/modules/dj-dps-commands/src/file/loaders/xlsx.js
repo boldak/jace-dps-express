@@ -5,7 +5,7 @@ let Promise = require("bluebird");
 module.exports = (params) => {
 	return new Promise( ( resolve, reject ) => {
 		
-		let d = xlsx.readFile(params.file)
+		let d = xlsx.readFile(params.file.path)
 		
 		for(i in d.Sheets){
 		 d.Sheets[i] = xlsx.utils.sheet_to_json(d.Sheets[i]);	

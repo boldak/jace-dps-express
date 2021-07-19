@@ -7,7 +7,7 @@ let Promise = require("bluebird");
 module.exports = (params) => {
 	
 	return new Promise( ( resolve, reject ) => {
-		let d = fs.readFileSync(params.file);
+		let d = fs.readFileSync(params.file.path);
 
 	    d = iconv.decode( new Buffer(d,"binary"), params.encoding ).toString();
 		

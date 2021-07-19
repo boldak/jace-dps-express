@@ -6,7 +6,7 @@ let Promise = require("bluebird");
 
 module.exports = (params) => {
 	return new Promise( ( resolve, reject ) => {
-		let d = fs.readFileSync(params.file);
+		let d = fs.readFileSync(params.file.path);
 
 		let options = {
 	          delimiter: params.delimiter || ";",

@@ -24,10 +24,10 @@ let loaders = {
 
 let impl = function(params) {
     
-    let filename = params.file;
+    let filename = params.file.name;
     if (filename) {
-        
-        let loader = loaders[mime.lookup(path.basename(filename))]
+        // console.log("file type:", mime.getType(path.basename(filename)))
+        let loader = loaders[mime.getType(path.basename(filename))]
         
         if (loader) {
             try {
@@ -36,7 +36,7 @@ let impl = function(params) {
                 throw new FileLoadImplError( e.toString() );
             }
         } else {
-            throw new FileLoadImplError("Mime type: '" + mime.lookup(path.basename(filename)) + "' not supported");
+            throw new FileLoadImplError("Mime type: '" + mime.getType(path.basename(filename)) + "' not supported");
         }
 
     } else {
@@ -64,8 +64,8 @@ module.exports = {
 
     execute: function(command, state, config) {
         
-        if (!util.isString(command.settings.file))
-            throw new FileLoadImplError("Incompatible file value: " + JSON.stringify(command.settings.file))
+        // if (!util.isString(command.settings.file))
+        //     throw new FileLoadImplError("Incompatible file value: " + JSON.stringify(command.settings.file))
         
         command.settings.encoding = command.settings.encoding || "utf8"  
         
