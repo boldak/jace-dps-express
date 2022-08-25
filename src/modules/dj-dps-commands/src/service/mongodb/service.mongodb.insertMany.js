@@ -1,5 +1,6 @@
 let Promise = require("bluebird")
 const mongo = require('mongodb').MongoClient //Promise.promisifyAll(require('mongodb').MongoClient)
+const { isArray } = require("lodash")
 
 let connectionUrl = process.env.MONGOLAB_URI || process.env.MONGODB_URL || process.env.ATLAS_URL || "mongodb://localhost:27017"
 
@@ -13,39 +14,43 @@ class MongoDBImplError extends Error {
 
 
 module.exports = {
-    name: "service.mongodb",
+    name: "service.mongodb.insertMany",
 
     synonims: {
-        "service.mongodb": "service.mongodb",
-        "service.mongodb.find": "service.mongodb",
-        "service.mongodb.aggregate": "service.mongodb",
+        "service.mongodb.insertCollection": "service.mongodb.insertMany"
         
     },
 
     "internal aliases": {
-        "query": "query",
+        // "query": "query",
+        // "where": "query",
         // "selector": "query",
         // "filter": "query",
         // "sort": "sort",
         // "orderBy":"sort",
         // "aggregate": "aggregate",
-        "db":"db",
-        "from":"collection",
-        "collection":"collection",
-        "on":"on",
-        "at":"on"
+        "docs": "documents",
+        "items": "documents",
+        
+        "db": "db",
+        "in": "collection",
+        "collection": "collection",
+        "into": "collection",
+        "on": "on",
+        "at": "on"
           
     },
 
     defaultProperty: {
-        "service.mongodb": "query",
-        "service.mongodb.find": "query"
+        "service.mongodb.insertMany": "documents",
+        "service.mongodb.insertCollection": "documents"
+          
     },
 
     execute: function(command, state, config) {
         
-        let query = command.settings.query || ((command.settings.data) ? command.settings.data : state.head.data)
-        if (!query) throw new MongoDBImplError(`No query available`)
+        // let query = command.settings.query || ((command.settings.data) ? command.settings.data : state.head.data) || {}
+        // if (!query) throw new MongoDBImplError(`No query available`)
         if(!command.settings.collection) throw new MongoDBImplError("No collection specified")    
         // let sort = command.settings.sort || {}
         // let aggregate = command.settings.aggregate || {$limit:20}
@@ -63,8 +68,11 @@ module.exports = {
         // let pathNames = (parsed) ? parsed.split("/") : []
         // if(pathNames.length > 0) database = pathNames[pathNames.length-1]
         
-
-
+        let docs = (command.settings.documents) 
+                        ? (isArray(command.settings.documents)) 
+                            ? command.settings.documents
+                            : [command.settings.documents]
+                        : []    
 
         let client
         return new Promise((resolve, reject) => {
@@ -77,8 +85,9 @@ module.exports = {
                     client = c
                     let db = client.db(database)
                     let collection = db.collection(command.settings.collection)
-                    collection.aggregate(query).toArray()
+                    collection.insertMany(docs)//.toArray()
                         .then(res => {
+                            // console.log(res)
                             state.head = {
                                 type: "json",
                                 data: res
@@ -94,10 +103,6 @@ module.exports = {
                         reject(new MongoDBImplError(err.toString()))
                         if(client) client.close()
                     })
-                })
-                .catch(err => {
-                        reject(new MongoDBImplError(err.toString()))
-                        if(client) client.close()
                 })    
 
         })
