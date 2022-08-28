@@ -53,6 +53,9 @@ module.exports = {
     },
 
     execute: function(command, state, config) {
+
+        console.log(command.settings)
+        
         
         let query = command.settings.query || ((command.settings.data) ? command.settings.data : state.head.data) || {}
         if (!query) throw new MongoDBImplError(`No query available`)
