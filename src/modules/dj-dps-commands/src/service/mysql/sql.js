@@ -1,4 +1,6 @@
-var util = require("util");
+const util = require("util");
+const { isString } = require("lodash")
+
 module.exports = {
   name: "sql",
   synonims:{
@@ -10,7 +12,7 @@ module.exports = {
   execute:function(command,state,config){
     try{  
       state.head = {
-        data: (_.isString(state.head.data)) ? state.head.data : JSON.stringify(state.head.data),
+        data: (isString(state.head.data)) ? state.head.data : JSON.stringify(state.head.data),
         type: "string"
       }
     }catch(e){throw e}   

@@ -1,12 +1,12 @@
 
 const mysql = require('mysql2');
-const _ = require("lodash");
+const {find, isArray, keys, values} = require("lodash");
 
 
 // create the connection pool
 const connectionUrl =
     process.env.JAWSDB_URL ||
-    'mysql://root:boldak@localhost:3306/x4mspp0ssyvlauv8'
+    'mysql://i8j0vk8kfyidr7mb:x3ibhlusf8oaxd11@ivgz2rnl5rh7sphb.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/x4mspp0ssyvlauv8'
 
 const pool = mysql.createPool({
   uri:connectionUrl,
@@ -72,7 +72,7 @@ module.exports = {
         
 
         let statement = query.split(/\s/)[0].toUpperCase()
-        if(!_.find(command.settings.permission, p => p == statement)) throw new SqlImplError(`No permission for execute ${statement} \n ${query}\n`)
+        if(!find(command.settings.permission, p => p == statement)) throw new SqlImplError(`No permission for execute ${statement} \n ${query}\n`)
         
         let connection    
         return new Promise((resolve, reject) => {
@@ -83,18 +83,18 @@ module.exports = {
                 })
                 .then(([results, fields]) => {
                     connection.release()
-                      if (!_.isArray(results)) {
+                      if (!isArray(results)) {
                       
                           return {
                               query: command.settings.query,
-                              text: _.keys(results).map(k => `${k}: ${JSON.stringify(results[k])}`).join(", ") + "\n"
+                              text: keys(results).map(k => `${k}: ${JSON.stringify(results[k])}`).join(", ") + "\n"
                           }
                       
                       } else {
                         var table = new Table();
                             table.push(fields.map(f => f.name))
                             results.forEach(row => {
-                            table.push(_.values(row).map( ( v, index ) => formatValue(v, fields[index].columnType)))
+                            table.push(values(row).map( ( v, index ) => formatValue(v, fields[index].columnType)))
                         })
                         
                         return {
