@@ -113,7 +113,7 @@ module.exports = {
                     resolve(state)
                 })
                 .catch(err => {
-                    connection.release()
+                    if(connection) connection.release()
                     reject(new SqlImplError(
                        (err.errno) ? `SQL Error ${err.errno}: ${err.sqlMessage}\n${command.settings.query}` : err.toString()
                     ))
